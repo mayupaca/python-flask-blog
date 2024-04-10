@@ -21,6 +21,17 @@ def test():
 def userId(user_id):
     return '<h1>Your User ID: {0} {1} {2}</h1>'.format(user_id[0],user_id[1],user_id[2])  # .format(user_id): ()の中の値が{}の中に入る
 
+
+@app.route('/user')
+def user():
+    user_list = [
+        ["1","John Lennon","john@test.com","1"],
+        ["2","Paul McCartney","paul@test.com","0"],
+        ["3","Ringo Starr","ringo@test.com","0"]
+    ]
+
+    return render_template('user.html', users=user_list)
+
 @app.errorhandler(404)
 def error_404(error):
     return render_template('error_pages/404.html'), 404
