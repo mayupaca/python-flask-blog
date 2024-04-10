@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask test</title>
-</head>
-<body>
-    <h1>Hello template</h1>
-</body>
-</html>
+{%extends "base.html" %}
+
+{% block content %}
+
+<h1>Hello Template!</h1>
+<p>Template test</p>
+
+{% endblock %}
