@@ -1,10 +1,17 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
-
+# view関数
 @app.route('/')
 def index():
-    return render_template('index.html')
+    user_name = "John"
+    return render_template('index.html', user_name=user_name)
+
+@app.route('/product')
+def product():
+    product_list = ["computer1", "computer2", "computer3"]
+    product_dict = {"product_name":"computer1","product_price":"4300","product_maker":"maker1"}
+    return render_template('product.html', products=product_list, product_dict=product_dict)
 
 @app.route('/test')
 def test():

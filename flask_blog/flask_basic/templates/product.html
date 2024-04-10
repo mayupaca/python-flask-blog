@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+
+{% block content %}
+
+<h1>Product List</h1>
+
+<ul>
+    {% for product in products %}
+        {%if product == "computer2" %}
+            <li><b>{{product}}</b></li>
+        {% else %}
+            <li>{{product}}</li>
+        {% endif %}
+
+    {% endfor %}
+</ul>
+<!-- <p>{{product_dict}}</p> -->
+
+{% endblock %}
