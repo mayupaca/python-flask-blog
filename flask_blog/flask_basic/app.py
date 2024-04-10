@@ -21,5 +21,9 @@ def test():
 def userId(user_id):
     return '<h1>Your User ID: {0} {1} {2}</h1>'.format(user_id[0],user_id[1],user_id[2])  # .format(user_id): ()の中の値が{}の中に入る
 
+@app.errorhandler(404)
+def error_404(error):
+    return render_template('error_pages/404.html'), 404
+
 if __name__ == '__main__':
     app.run(debug=True) # debug=Trueにするとデバッグモードになって、エラーを表示してくれる
